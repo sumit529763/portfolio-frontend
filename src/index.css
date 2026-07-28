@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-ink: #1a1512;
+  --color-body: #5b5347;
+  --color-paper: #fbf7f0;
+  --color-line: #e8e1d4;
+  --color-gold: #c99a3e;
+  --color-golddeep: #9c7527;
+  --color-rose: #c97b6d;
+  --color-herobg: #14100d;
+  --color-herotext: #f5efe3;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-body);
+  font-family: var(--font-body);
+}

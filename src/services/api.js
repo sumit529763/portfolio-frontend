@@ -37,4 +37,23 @@ export const getMessages = () => api.get('/messages');
 export const markMessageRead = (id) => api.put(`/messages/${id}/read`);
 export const deleteMessage = (id) => api.delete(`/messages/${id}`);
 
+
+// Education
+export const getEducation = () => api.get('/education');
+export const createEducation = (data) => api.post('/education', data);
+export const updateEducation = (id, data) => api.put(`/education/${id}`, data);
+export const deleteEducation = (id) => api.delete(`/education/${id}`);
+
+// Experience
+export const getExperience = () => api.get('/experience');
+export const createExperience = (data) => api.post('/experience', data);
+export const updateExperience = (id, data) => api.put(`/experience/${id}`, data);
+export const deleteExperience = (id) => api.delete(`/experience/${id}`);
+
+// Achievements
+export const getAchievements = () => api.get('/achievements');
+export const createAchievement = (data) => api.post('/achievements', data);
+export const updateAchievement = (id, data) => api.put(`/achievements/${id}`, data);
+export const deleteAchievement = (id) => api.delete(`/achievements/${id}`);
+
 export default api;

@@ -1,29 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        scrolled ? 'bg-herobg/90 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-gray-900">
+        <a href="#home" className="font-display text-xl font-semibold text-herotext">
           Sumit Naik
         </a>
 
-        {/* Desktop Menu */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              className="text-herotext/70 hover:text-gold transition-colors font-medium text-sm"
             >
               {link.name}
             </a>
@@ -33,7 +46,7 @@ const Navbar = () => {
             href="https://github.com/sumit529763"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-herotext/70 hover:text-gold transition-colors text-sm"
           >
             GitHub
           </a>
@@ -42,7 +55,7 @@ const Navbar = () => {
             href="https://www.linkedin.com/in/sumitnaik52"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-herotext/70 hover:text-gold transition-colors text-sm"
           >
             LinkedIn
           </a>
@@ -50,22 +63,23 @@ const Navbar = () => {
 
         {/* Mobile Toggle Button */}
         <button
-          className="md:hidden text-gray-900 w-10 h-10 flex items-center justify-center"
+          aria-label="Toggle Navigation"
+          className="md:hidden text-herotext w-10 h-10 flex items-center justify-center font-bold text-lg"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? "✕" : "☰"}
+          {isOpen ? '✕' : '☰'}
         </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white px-6 py-4 flex flex-col gap-4 border-t border-gray-100">
+        <div className="md:hidden bg-herobg px-6 py-4 flex flex-col gap-4 border-t border-white/10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
+              className="text-herotext/80 hover:text-gold font-medium transition-colors"
             >
               {link.name}
             </a>
@@ -74,7 +88,7 @@ const Navbar = () => {
             href="https://github.com/sumit529763"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-herotext/70 hover:text-gold transition-colors"
           >
             GitHub
           </a>
@@ -82,7 +96,7 @@ const Navbar = () => {
             href="https://www.linkedin.com/in/sumitnaik52"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-herotext/70 hover:text-gold transition-colors"
           >
             LinkedIn
           </a>

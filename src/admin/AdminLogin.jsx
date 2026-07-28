@@ -23,34 +23,26 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-gray-50">
-      <div className="max-w-sm w-full bg-white p-8 rounded-xl border border-gray-200">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">Admin Login</h1>
+    <div className="min-h-screen flex items-center justify-center px-6 bg-herobg">
+      <div className="max-w-sm w-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl">
+        <h1 className="font-display text-2xl font-semibold text-herotext mb-6 text-center">Admin Login</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+            type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-herotext placeholder-herotext/40 focus:outline-none focus:border-gold transition-colors"
           />
           <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+            type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-herotext placeholder-herotext/40 focus:outline-none focus:border-gold transition-colors"
           />
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            className="w-full px-6 py-3 bg-gold text-herobg rounded-full font-medium hover:bg-golddeep transition-colors"
           >
             Login
           </button>
-          {error && <p className="text-red-600 text-sm text-center">{error}</p>}
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
         </form>
       </div>
     </div>

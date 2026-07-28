@@ -2,14 +2,22 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-24 px-6 bg-paper">
       <div className="max-w-3xl mx-auto">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-gold text-xs tracking-[0.2em] uppercase font-medium mb-3"
+        >
+          Who I Am
+        </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-gray-900 mb-8"
+          className="font-display text-3xl sm:text-4xl font-semibold text-ink mb-8"
         >
           About Me
         </motion.h2>
@@ -19,7 +27,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="space-y-4 text-gray-600 text-lg leading-relaxed"
+          className="space-y-4 text-body text-lg leading-relaxed"
         >
           <p>
             I'm a Full Stack Developer with hands-on experience building cloud-native
@@ -47,10 +55,10 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-8 flex flex-wrap gap-3"
         >
-          <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+          <span className="px-4 py-2 bg-gold/10 border border-gold/30 text-golddeep rounded-full text-sm font-medium">
             🏆 Agentic AI Hackathon 2025 Winner
           </span>
-          <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+          <span className="px-4 py-2 bg-ink/5 border border-line text-ink rounded-full text-sm font-medium">
             AI &amp; Cloud Intern @ Hebbale Academy
           </span>
         </motion.div>

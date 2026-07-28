@@ -32,7 +32,7 @@ const BottomNav = () => {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50"
+      className="md:hidden fixed bottom-0 left-0 right-0 bg-herobg border-t border-white/10 z-50"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="flex justify-around items-center h-16">
@@ -43,20 +43,14 @@ const BottomNav = () => {
             <a
               key={item.name}
               href={item.href}
-              className="flex flex-col items-center justify-center gap-1 flex-1 h-full active:bg-gray-50 transition-colors"
+              className="flex flex-col items-center justify-center gap-1 flex-1 h-full active:bg-white/5 transition-colors"
             >
               <Icon
                 size={22}
                 strokeWidth={isActive ? 2.5 : 1.8}
-                className={isActive ? 'text-gray-900' : 'text-gray-400'}
+                className={isActive ? 'text-gold' : 'text-herotext/40'}
               />
-              <span
-                className={
-                  isActive
-                    ? 'text-[10px] font-medium text-gray-900'
-                    : 'text-[10px] font-medium text-gray-400'
-                }
-              >
+              <span className={`text-[10px] font-medium ${isActive ? 'text-gold' : 'text-herotext/40'}`}>
                 {item.name}
               </span>
             </a>
