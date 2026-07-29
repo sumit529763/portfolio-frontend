@@ -9,6 +9,8 @@ import Achievements from '../components/Achievements';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import BottomNav from '../components/BottomNav';
+import SparkGame from '../components/IgniteGame';
+import IgniteGame from '../components/IgniteGame';
 
 const Home = () => {
   return (
@@ -21,6 +23,7 @@ const Home = () => {
       <Projects />
       <Education />
       <Achievements />
+      <IgniteGame />
       <Contact />
       <Footer />
       <BottomNav />
